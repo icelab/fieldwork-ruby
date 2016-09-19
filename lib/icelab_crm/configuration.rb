@@ -1,4 +1,17 @@
 module IcelabCrm
+  def self.configuration
+    @configuration
+  end
+
+  def self.configuration=(config)
+    @configuration = config
+  end
+
+  def self.configure
+    @configuration ||= Configuration.new
+    yield configuration
+  end
+
   class Configuration
     attr_accessor :project_id
     attr_accessor :project_public_key
