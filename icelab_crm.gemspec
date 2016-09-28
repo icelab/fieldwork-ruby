@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'icelab_crm/version'
+require 'fieldwork/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "icelab_crm"
-  spec.version       = IcelabCrm::VERSION
+  spec.name          = "fieldwork"
+  spec.version       = Fieldwork::VERSION
   spec.authors       = ["Andrew Croome"]
   spec.email         = ["andrew@icelab.com.au"]
 
   spec.summary       = %q{ Write a short summary, because Rubygems requires one.}
   spec.description   = %q{ Write a longer description or delete this line.}
-  spec.homepage      = "https://github.com/icelab/icelab_crm-ruby"
+  spec.homepage      = "https://github.com/icelab/fieldwork-ruby"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

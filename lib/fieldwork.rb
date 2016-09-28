@@ -1,10 +1,10 @@
-require "icelab_crm/version"
-require "icelab_crm/api_host_settings"
-require "icelab_crm/errors"
-require "icelab_crm/configuration"
-require "icelab_crm/client"
+require "fieldwork/version"
+require "fieldwork/api_host_settings"
+require "fieldwork/errors"
+require "fieldwork/configuration"
+require "fieldwork/client"
 
-module IcelabCrm
+module Fieldwork
   def self.track_event(event_name, event_properties={})
     Client.new(configuration: configuration).track_event(
       event_name, event_properties
