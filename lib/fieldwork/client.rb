@@ -1,8 +1,8 @@
 require "faraday"
 require "multi_json"
-require "icelab_crm/errors"
+require "fieldwork/errors"
 
-module IcelabCrm
+module Fieldwork
   class Client
     attr_reader :configuration
 
@@ -58,7 +58,7 @@ module IcelabCrm
     end
 
     def track_event_endpoint_url
-      @track_event_endpoint_url ||= "#{IcelabCrm.api_host_url}/api/v1/projects/#{configuration.project_id}/events"
+      @track_event_endpoint_url ||= "#{Fieldwork.api_host_url}/api/v1/projects/#{configuration.project_id}/events"
     end
 
     def ensure_configuration

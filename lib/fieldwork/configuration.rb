@@ -1,4 +1,4 @@
-module IcelabCrm
+module Fieldwork
   def self.configuration
     @configuration
   end
