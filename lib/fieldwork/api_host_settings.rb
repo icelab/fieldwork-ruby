@@ -1,6 +1,6 @@
 module Fieldwork
   def self.api_host
-    ENV['FIELDWORK_API_HOST'] || "localhost:3000"
+    ENV['FIELDWORK_API_HOST'] || "api.dofieldwork.com"
   end
 
   def self.api_protocol
