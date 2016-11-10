@@ -5,6 +5,12 @@ require "fieldwork/configuration"
 require "fieldwork/client"
 
 module Fieldwork
+  def self.add_entity(entity_name, entity_properties={})
+    Client.new(configuration: configuration).add_entity(
+      entity_name, entity_properties
+    )
+  end
+
   def self.track_event(event_name, event_properties={})
     Client.new(configuration: configuration).track_event(
       event_name, event_properties
