@@ -50,6 +50,7 @@ module Fieldwork
       response = fieldwork_connection.post do |request|
         request.url endpoint_url
         request.headers['Content-Type'] = 'application/json'
+        request.headers['User-Agent'] = "Fieldwork/#{Fieldwork::VERSION} ruby"
         request.body = MultiJson.dump(payload)
       end
 
