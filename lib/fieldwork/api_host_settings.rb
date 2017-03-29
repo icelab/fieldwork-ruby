@@ -4,7 +4,7 @@ module Fieldwork
   end
 
   def self.api_protocol
-    ENV['FIELDWORK_API_PROTOCOL'] || "http"
+    ENV['FIELDWORK_API_PROTOCOL'] || "https"
   end
 
   def self.api_host_url

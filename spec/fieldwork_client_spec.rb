@@ -52,7 +52,7 @@ describe Fieldwork::Client do
 
     context "with valid credentials" do
       before do
-        stub_request(:post, "http://api.dofieldwork.com/api/v1/projects/project-id/entities")
+        stub_request(:post, "https://api.dofieldwork.com/api/v1/projects/project-id/entities")
           .with(
             body: "{\"name\":\"user\",\"properties\":{\"id\":1,\"email\":\"user@example.com\"}}",
             headers: api_request_headers.merge('Authorization'=>'Basic cHJvamVjdC1wdWJsaWMta2V5Og==')
@@ -74,7 +74,7 @@ describe Fieldwork::Client do
 
     context "with invalid credentials" do
       before do
-        stub_request(:post, "http://api.dofieldwork.com/api/v1/projects/project-id/entities")
+        stub_request(:post, "https://api.dofieldwork.com/api/v1/projects/project-id/entities")
           .with(
             body: "{\"name\":\"user\",\"properties\":{\"id\":1,\"email\":\"user@example.com\"}}",
             headers: api_request_headers.merge('Authorization'=>'Basic aW52YWxpZC1rZXk6')
@@ -100,7 +100,7 @@ describe Fieldwork::Client do
 
     context "with a missing endpoint" do
       before do
-        stub_request(:post, "http://api.dofieldwork.com/api/v1/projects/project-id/entities")
+        stub_request(:post, "https://api.dofieldwork.com/api/v1/projects/project-id/entities")
           .with(
             body: "{\"name\":\"user\",\"properties\":{\"id\":1,\"email\":\"user@example.com\"}}",
             headers: api_request_headers.merge('Authorization'=>'Basic cHJvamVjdC1wdWJsaWMta2V5Og==')
@@ -116,7 +116,7 @@ describe Fieldwork::Client do
 
         expect{
           client.add_entity("user", {id: 1, email: "user@example.com"})
-        }.to raise_error Fieldwork::ApiError, "404 endpoint not found: http://api.dofieldwork.com/api/v1/projects/project-id/entities"
+        }.to raise_error Fieldwork::ApiError, "404 endpoint not found: https://api.dofieldwork.com/api/v1/projects/project-id/entities"
       end
     end
   end
@@ -148,7 +148,7 @@ describe Fieldwork::Client do
 
     context "with valid credentials" do
       before do
-        stub_request(:post, "http://api.dofieldwork.com/api/v1/projects/project-id/events")
+        stub_request(:post, "https://api.dofieldwork.com/api/v1/projects/project-id/events")
           .with(
             body: "{\"name\":\"user_created\",\"properties\":{\"email\":\"user@example.com\"}}",
             headers: api_request_headers.merge('Authorization'=>'Basic cHJvamVjdC1wdWJsaWMta2V5Og==')
@@ -170,7 +170,7 @@ describe Fieldwork::Client do
 
     context "with invalid credentials" do
       before do
-        stub_request(:post, "http://api.dofieldwork.com/api/v1/projects/project-id/events")
+        stub_request(:post, "https://api.dofieldwork.com/api/v1/projects/project-id/events")
           .with(
             body: "{\"name\":\"user_created\",\"properties\":{\"email\":\"user@example.com\"}}",
             headers: api_request_headers.merge('Authorization'=>'Basic aW52YWxpZC1rZXk6')
